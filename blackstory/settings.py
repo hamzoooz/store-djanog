@@ -48,7 +48,7 @@ ROOT_URLCONF = 'blackstory.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS':  ['templates'],
+        'DIRS':  [ os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,13 +77,14 @@ DATABASES = {
         # 'PASSWORD': 'Hamza@2020',
         # 'HOST': 'localhost',
         # 'PORT': '5432',
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hamzoooz',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'bookhope',
         'USER': 'hamzoooz',
         'PASSWORD': 'Hamza@2020',
         # 'HOST': '207.154.196.135',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

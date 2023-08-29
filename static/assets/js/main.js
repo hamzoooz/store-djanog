@@ -656,7 +656,7 @@ $(document).ready(function () {
 // #######################################
 $(document).ready(function () {
   // addToCartBtn
-  $('.addToCartBtn').click(function (e) {
+  $('.addToCartBtnXYZ').click(function (e) {
     e.preventDefault();
     var book_id = $(this).closest('.book_data').find('.book_id').val();
     var token = $("input[name=csrfmiddlewaretoken]").val();

@@ -69,8 +69,8 @@ WSGI_APPLICATION = 'blackstory.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
         
         # 'ENGINE': 'django.db.backends.postgresql',
         # 'USER': 'hamzoooz',
@@ -78,13 +78,13 @@ DATABASES = {
         # 'HOST': 'localhost',
         # 'PORT': '5432',
         # 'ENGINE': 'django.db.backends.postgresql',
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'bookhope',
-        'USER': 'hamzoooz',
-        'PASSWORD': 'Hamza@2020',
-        # 'HOST': '207.154.196.135',
-        'HOST': 'localhost',
-        'PORT': '',
+        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # 'NAME': 'bookhope',
+        # 'USER': 'hamzoooz',
+        # 'PASSWORD': 'Hamza@2020',
+        # # 'HOST': '207.154.196.135',
+        # 'HOST': 'localhost',
+        # 'PORT': '',
     }
 }
 

@@ -10,8 +10,8 @@ def index(request):
     trending_books = Producs.objects.filter( available='publised', trending=True)[0:10]
     recent_books = Producs.objects.filter( available='publised').order_by('-create_at')[0:10]
     random_books = Producs.objects.filter(available='publised').order_by('?')[0:10]
- 
-    return render(request, 'products\index.html', {
+    # store-djanog\templates\products\index.html
+    return render(request, 'index.html', {
     "trending_books":trending_books,
     "recent_books":recent_books,
     "random_books":random_books,
@@ -20,4 +20,4 @@ def index(request):
     
 def producud_detail(request, id):
     books = Producs.objects.get( available='publised' , id=id)
-    return render(request, 'products\product_detail.html' , { "books":books} )
+    return render(request, 'product_detail.html' , { "books":books} )

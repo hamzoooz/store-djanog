@@ -7,7 +7,7 @@
 
 <div class="container d-flex  ">
     <div class="py-1 bg-secondary1  d-flex align-items-center ">
-        <a href="#" class="text-secondary  p-2 "><i class="fa fa-home"></i> </a><i class="fa fa-caret-right text-secondary  "></i>
+        <a href="{% url '/' %}" class="text-secondary  p-2 "><i class="fa fa-home"></i> </a><i class="fa fa-caret-right text-secondary  "></i>
         <a href="#" class="text-secondary  p-2"> Collections  </a> <i class="fa fa-caret-right text-secondary  "></i>
         <a href="#" class="text-secondary  p-2 "> {{books.category.name}}  </a> <i class="fa fa-caret-right text-secondary  "></i>
         <span class="text-secondary  p-2 "> {{books.title}}  </span>
@@ -27,11 +27,12 @@
                                     {% if books.selling_price > 0 %}
                                         <input type="hidden"  value="{{ books.id }}" class="book_id" >
                                         {% csrf_token %}
-                                        <div  class="btn btn-warning  w-100 mt-2 addToCartBtn "> <i class="fa fa-shopping-cart"></i> Add to Card </div>
-                                        <a href="#" class="btn btn-success w-100 mt-2 "> <i class="fa fa-eye"></i> Free Sampll </a>
+                                        <div  class="btn btn-warning  w-100 mt-2 addToCartBtn "> <i class="fa fa-shopping-cart"></i> Add to Card </div></a>
+                                        {% comment %} <a href="{book.url}" ><a href="#" class="btn btn-success w-100 mt-2 "> <i class="fa fa-eye"></i> Free Sampll </a> {% endcomment %}
                                     {% else %}
-                                        <a download href="{{ books.file.url }}"><button class="btn btn-primary download-link download_link_to_increase w-100 mt-2 "  incres_number_of_download="{{ books.id }}" > <i class="fa fa-download"></i> download</button></a>
-                                        <a href="{{ books.file.url }}"><button class="btn btn-success mt-3 w-100 mt-2 "> <i class="fa fa-eye"></i> Read</button></a>
+                                    <div  class="btn btn-warning  w-100 mt-2 addToCartBtn "> <i class="fa fa-shopping-cart"></i> Add to Card </div></a>
+                                        {% comment %} <a download href="{{ books.file.url }}"><button class="btn btn-primary download-link download_link_to_increase w-100 mt-2 "  incres_number_of_download="{{ books.id }}" > <i class="fa fa-download"></i> download</button></a> {% endcomment %}
+                                        {% comment %} <a href="{{ books.file.url }}"><button class="btn btn-success mt-3 w-100 mt-2 "> <i class="fa fa-eye"></i> Read</button></a> {% endcomment %}
                                     {% endif %}
 
                                 <!-- sharing and reporting and edite -->

@@ -38,10 +38,11 @@
             {% if book.selling_price > 0 %}
             <input type="hidden"  value="{{ book.id }}" class="book_id" >
             {% csrf_token %}
-            <div  class="btn btn-warning add-to-card float-start addToCartBtn "> <i class="fa fa-shopping-cart"></i> Add to Card </div>
+            <a href="{book.url}" ><div  class="btn btn-warning add-to-card float-start addToCartBtn "> <i class="fa fa-shopping-cart"></i> Add to Card </div></a>
             <span class="float-end fw-bold  ">{{ book.selling_price |stringformat:"d" }}$</span>
             {% else %}
-            <a download href="{{book.file.url}}" class="btn btn-primary  add-to-card download-link  download_link_to_increase float-start  "  incres_number_of_download="{{ book.id }}"  > <i class="fa fa-download"></i> download   <input type="hidden" value="{{book.id}}" class="incres_number_of_download" />  </a><a href="{{book.file.url}}" class="btn btn-success  float-end read-link "> <i class="fa fa-eye"></i> read</a>
+             <a href="{book.url}" ><div  class="btn btn-warning add-to-card float-start addToCartBtn "> <i class="fa fa-shopping-cart"></i> Add to Card </div></a>
+            {% comment %} <a download href="{{book.file.url}}" class="btn btn-primary  add-to-card download-link  download_link_to_increase float-start  "  incres_number_of_download="{{ book.id }}"  > <i class="fa fa-download"></i> download   <input type="hidden" value="{{book.id}}" class="incres_number_of_download" />  </a><a href="{{book.file.url}}" class="btn btn-success  float-end read-link "> <i class="fa fa-eye"></i> read</a> {% endcomment %}
             {% endif %}
 
         </div>

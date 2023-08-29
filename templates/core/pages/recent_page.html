@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Recent Boook Added   {% endblock title %} 
+
+{% block content %}
+
+{% if recent_books %}
+
+<div class="trending bg-gradient " style="--bs-bg-opacity: .6;">
+  <h2 class="text- text-lead bg- bg-gradient customNavigation " style="padding: 3px 13px 3px 20px !important;" > <i class="fa fa-chart-line "></i> Recent Books 
+  <a href="{% url 'frontpage' %} " class="btn btn-warning float-end pe-4"> <i class="fa fa-reply"></i> Back </a>
+  </h2>
+  <div class="container-fluid" style="--bs-bg-opacity: .6; background: #f8f9fa; padding: 17px;">
+    <div class="row ">
+      {% comment %} <div id="owl-demo-frontpage-last-book" class="owl-carousel"> {% endcomment %}
+      {% for book in recent_books %}
+          {% include "templates-parts/pages_in_core.html" %}
+      {% endfor %}
+  </div>
+</div>
+</div>
+
+{% else %}
+
+<div class="alert alert-success container" role="alert">
+  <h4 class="alert-heading">There are not Books Yet </h4>
+  <p> that may be Case by your filtre or no book published until this moment  </p>
+  <hr>
+  <p class="mb-0">You can publish your book or any publisc book from <a href="{% url 'add_book' %}"> <i class="fa fa-plus"></i> here</a>.</p>
+</div>
+
+{% endif %}
+
+
+{% if whatsapp.status %}
+<a href="https://wa.me/{{whatsapp.number}}?text={{ whatsapp.message|urlize }}" class="whatsapp-chat" style="position: fixed; bottom: 11px; z-index: 400;">
+  <div class="whatsapp-chat" style=" background-image: url('{{ whatsapp.icon.url  }}');
+    z-index: 99;
+    background-size: contain;
+    position: sticky;
+    border-radius: 50%;
+    border: 5px #ddd solid;
+    width: 70px;
+    height: 70px;
+    "></div>
+</a>
+{% endif %}
+
+{% endblock content %}
+
+{% block scripts %} {% endblock scripts %}
+
+
+
+

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load menu %}
+{% load static %}
+{% block content %}
+
+{% include 'inc/slider.html' %}
+
+<div class="card" style="width: 100%; margin: 0 auto;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h1 class="card-title">Page Not Found (404) </h1>
+    <p class="card-text">This page not found mybe deleted or does'n exists </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">You can try leater </li>
+    <li class="list-group-item">you can report of that error </li>
+    {% comment %} <li class="list-group-item">A third item</li> {% endcomment %}
+  </ul>
+  <div class="card-body">
+    {% comment %} <a href="{% url '/' %}" class="btn btn-info">Go to Home </a> {% endcomment %}
+    <a href="#" class="btn btn-info">Search </a>
+  </div>
+</div>
+
+
+
+{% endblock content %}
+{% block scripts %} {% endblock scripts %}
+
+

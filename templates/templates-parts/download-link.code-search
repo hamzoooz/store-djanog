@@ -1,0 +1,66 @@
+# Query: download-link
+# Flags: CaseSensitive WordMatch
+# ContextLines: 1
+
+13 results - 9 files
+
+search/templates/search/search.html:
+  30                          {% else %}
+  31:                              <a download href="{{book.file.url}}" class="btn btn-primary  download-link float-start  "> <i class="fa fa-download"></i> download </a>
+  32                               <a href="{{book.file.url}}" class="btn btn-success  float-end read-link "> <i class="fa fa-eye"></i> read </a>
+
+static/assets/css/main.css:
+  85  /* card in front page  */
+  86: .add-to-card, .download-link , .read-link{font-size: 15px; padding: 2px;}
+  87  
+
+static/assets/js/main.js:
+  462    // incres number of doenload 
+  463:   $(document).on('click', '.download-link', function (e) {
+  464      // e.preventDefault();
+
+templates/core/category_detail.html:
+  34                                  {% else %}  
+  35:                                     <a download href="{{book.file.url}}" class="btn btn-primary  download-link float-start  "> <i class="fa fa-download"></i> download </a> 
+  36  
+
+templates/templates-parts/books.html:
+  50              {% else %}
+  51:             <a download href="{{book.file.url}}" class="btn btn-primary  download-link float-start  "> <i class="fa fa-download"></i> download</a><a href="{{book.file.url}}" class="btn btn-success  float-end read-link "> <i class="fa fa-eye"></i> read</a>
+  52              {% endif %}
+
+templates/templates-parts/pages_in_core.html:
+  57              {% else %}
+  58:               <a download href="{{book.file.url}}" class="btn btn-primary  download-link float-start  "> <i class="fa fa-download"></i> download</a><a href="{{book.file.url}}" class="btn btn-success  float-end read-link "> <i class="fa fa-eye"></i> read</a>
+  59              {% endif %}
+
+users/templates/users/my_store.html:
+   35              {% else %}
+   36:               <a download href="{{book.file.url}}" class="btn btn-primary  download-link float-start  "> <i class="fa fa-download"></i> download</a><a href="{{book.file.url}}" class="btn btn-success  float-end read-link "> <i class="fa fa-eye"></i> read</a>
+   37              {% endif %}
+
+   96              {% else %}
+   97:             <a download href="{{book.file.url}}" class="btn btn-primary  download-link float-start  "> <i
+   98                  class="fa fa-download"></i> download</a><a href="{{book.file.url}}"
+
+  151              {% else %}
+  152:             <a download href="{{book.file.url}}" class="btn btn-primary  download-link float-start  "> <i
+  153                  class="fa fa-download"></i> download</a><a href="{{book.file.url}}"
+
+  188              {% else %}
+  189:             <a download href="{{book.file.url}}" class="btn btn-primary  download-link float-start  "> <i class="fa fa-download"></i> download</a><a href="{{book.file.url}}" class="btn btn-success  float-end read-link "> <i class="fa fa-eye"></i> read</a>
+  190              {% endif %}
+
+  221              {% else %}
+  222:             <a download href="{{book.file.url}}" class="btn btn-primary  download-link float-start  "> <i class="fa fa-download"></i> download</a><a href="{{book.file.url}}" class="btn btn-success  float-end read-link "> <i class="fa fa-eye"></i> read</a>
+  223              {% endif %}
+
+users/templates/users/user_detail copy.html:
+  147                              {% else %}
+  148:                                 <a download href="{{book.file.url}}" class="btn btn-primary  download-link float-start  "> <i class="fa fa-download"></i> download</a><a href="{{book.file.url}}" class="btn btn-success  float-end read-link "> <i class="fa fa-eye"></i> read</a>
+  149                              {% endif %}
+
+users/templates/users/user_detail.html:
+  290                                              {% else %}
+  291:                                             <a download href="{{book.file.url}}" class="btn btn-primary  download-link float-start  "> <i class="fa fa-download"></i> download</a><a href="{{book.file.url}}" class="btn btn-success  float-end read-link "> <i class="fa fa-eye"></i> read</a>
+  292                                              {% endif %}

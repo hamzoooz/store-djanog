@@ -1,0 +1,149 @@
+{% extends 'base.html' %}
+{% load menu %}
+{% load static %}
+{% block content %}
+
+{% include 'inc/slider.html' %}
+
+{% comment %} slider {% endcomment %}
+
+
+{% comment %} end of slider  {% endcomment %}
+
+
+
+{% comment %} trending book {% endcomment %}
+{% if trending_books %}
+  <div class="trending bg-gradient " style="--bs-bg-opacity: .6;">
+    <h4 class="bg-gradient customNavigation " style="padding: 3px 13px 3px 20px !important;" > <i class="fa fa-chart-line "></i> <a href="{% url 'trending_page' %} "  class="text-muted" >   Trending Books  </a>  <a  class=" text-muted stop-circle-in-frontpage float-end pe-4 "> <i class="fa fa-stop"></i>   <a  class=" text-muted play-circle-in-frontpage  float-end pe-4"> <i class="fa fa-play"></i>  </a>   </h2>
+    <div class="clear-fix" ></div>
+    <div class="container-fluid" style="--bs-bg-opacity: .6; background: #f8f9fa; padding: 17px;">
+      <div class="row ">
+        <div id="owl-demo-frontpage-last-book" class="owl-carousel">
+          {% for book in trending_books %}
+
+            {% include 'templates-parts/books.html' %}
+               
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  </div>
+{% else %}
+    {% include 'templates-parts/books_else.html' %}
+{% endif %}
+
+
+
+{% comment %} recent_books {% endcomment %}
+{% if recent_books %}
+  <div class="trending bg-gradient " style="--bs-bg-opacity: .6;">
+    <h4 class="bg-gradient customNavigation " style="padding: 3px 13px 3px 20px !important;" > <i class="fa fa-history "></i> <a href="{% url 'recent_page' %} "  class="text-muted" >  Recent Book Added  </a>  <a  class=" text-muted stop-circle-in-frontpage float-end pe-4 "> <i class="fa fa-stop"></i>  </a> <a  class="  text-muted play-circle-in-frontpage  float-end pe-4"> <i class="fa fa-play"></i>  </a> </h4>
+    <div class="clear-fix" ></div>
+    <div class="container-fluid" style="--bs-bg-opacity: .6; background: #f8f9fa; padding: 17px;">
+      <div class="row ">
+        <div id="owl-demo-frontpage-recent-book" class="owl-carousel">
+          {% for book in recent_books %}
+
+            {% include 'templates-parts/books.html' %}
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  </div>
+{% else %}
+    {% include 'templates-parts/books_else.html' %}
+{% endif %}
+
+
+
+{% comment %} random books {% endcomment %}
+{% if random_books %}
+  <div class="trending bg-gradient " style="--bs-bg-opacity: .6;">
+    <h4 class="bg-gradient customNavigation " style="padding: 3px 13px 3px 20px !important;" > <i class="fa fa-random "></i> <a href="{% url 'random_books' %} "  class="text-muted" >  Random Book  </a>  <a  class=" text-muted stop-circle-in-frontpage float-end pe-4 "> <i class="fa fa-stop"></i>  </a> <a  class="  text-muted play-circle-in-frontpage  float-end pe-4"> <i class="fa fa-play"></i>  </a> </h4>
+    <div class="clear-fix" ></div>
+    <div class="container-fluid" style="--bs-bg-opacity: .6; background: #f8f9fa; padding: 17px;">
+      <div class="row ">
+        <div id="owl_demo_frontpage_random_books" class="owl-carousel">
+          {% for book in random_books %}
+            {% include 'templates-parts/books.html' %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  </div>
+{% else %}
+    {% include 'templates-parts/books_else.html' %}
+{% endif %}
+
+
+
+{% comment %} Feed Book  {% endcomment %}
+{% if feed_page %}
+    <div class="trending bg-gradient " style="--bs-bg-opacity: .6;">
+      <h4 class="bg-gradient customNavigation " style="padding: 3px 13px 3px 20px !important;" > <i class="fa fa-users "></i> <a href="{% url 'feed_page' %} "  class="text-muted" > from  your Subscripe  </a>  <a  class=" text-muted stop-circle-in-frontpage float-end pe-4 "> <i class="fa fa-stop"></i>  </a> <a  class=" text-muted play-circle-in-frontpage  float-end pe-4"> <i class="fa fa-play"></i>  </a> </h4>
+      <div class="clear-fix" ></div>
+      <div class="container-fluid" style="--bs-bg-opacity: .6; background: #f8f9fa; padding: 17px;">
+        <div class="row ">
+          <div id="owl_demo_frontpage_feed_book" class="owl-carousel">
+            {% for book in feed_page %}
+
+              {% include 'templates-parts/books.html' %}
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    </div>
+{% else %}
+  <h4 class="user-data user-data" style="--bs-bg-opacity: .6;"> <h4 class="bg-gradient customNavigation " style="padding: 3px 13px 3px 20px !important;" > <i class="fa fa-users "></i> <a href="{% url 'feed_page' %} "  class="text-muted" > from  your Subscripe  </a>  <a  class=" text-muted stop-circle-in-frontpage float-end pe-4 "> <i class="fa fa-stop"></i>  </a> <a  class=" text-muted play-circle-in-frontpage  float-end pe-4"> <i class="fa fa-play"></i>  </a> </h4>
+    <div class="clear-fix" ></div>
+      <div class="container-fluid" style="--bs-bg-opacity: .6; background: #f8f9fa; padding: 17px;">
+        <div class="row ">
+          <div id="owl_demo_frontpage_feed_book_slug" class="owl-carousel">
+            {% for user in users %}
+
+            {% include 'templates-parts/users.html' %}
+
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+{% endif %}
+
+
+
+{% comment %} Users Sugist  {% endcomment %}
+{% if users %}
+  <div class="trending bg-gradient user-data22 user-data " style="--bs-bg-opacity: .6;">
+      <h4 class="bg-gradient customNavigation " style="padding: 3px 13px 3px 20px !important;" > <i class="fa fa-compass "></i> <a href="{% url 'feed_page' %} "  class="text-muted" > Segiste Subscripe  </a>  <a  class=" text-muted stop-circle-in-frontpage float-end pe-4 "> <i class="fa fa-stop"></i>  </a> <a  class=" text-muted play-circle-in-frontpage  float-end pe-4"> <i class="fa fa-play"></i>  </a> </h4>
+      <div class="clear-fix" ></div>
+      <div class="container-fluid" style="--bs-bg-opacity: .6; background: #f8f9fa; padding: 17px;">
+        <div class="row ">
+          <div id="owl_demo_frontpage_feed_book_sugiste" class="owl-carousel">
+            {% for user in users %}
+
+              {% include 'templates-parts/users.html' %}
+
+          {% endfor %}
+        </div>
+      </div>
+  </div>
+{% endif %}
+
+
+{% menu %}
+
+
+{% if whatsapp.status %}
+  <a href="https://wa.me/{{whatsapp.number}}?text={{ whatsapp.message|urlize }}" class="whatsapp-chat" style="position: fixed; bottom: 11px; z-index: 400;">
+  <div class="whatsapp-chat" style=" background-image: url('{{ whatsapp.icon.url  }}'); z-index: 99; background-size: contain; position: sticky; border-radius: 50%; border: 5px #ddd solid; width: 70px; height: 70px; "></div></a>
+{% endif %}
+
+
+{% endblock content %}
+{% block scripts %} {% endblock scripts %}
+
+
